@@ -50,7 +50,11 @@ body {
 ul {
   list-style: none;
 }
-
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 a {
   text-decoration: none;
 }
@@ -84,7 +88,7 @@ a {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.buttom {
+.button {
   display: inline-flex;
   align-items: center;
   padding: 10px 28px;
@@ -246,7 +250,7 @@ a {
   text-transform: uppercase;
   color: var(--light-color);
 }
-.hero .buttom {
+.hero .button {
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;

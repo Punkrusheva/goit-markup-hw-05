@@ -152,14 +152,25 @@ a {
 }
 .site-nav .link {
   color: var(--title-color);
-  padding-bottom: 28px;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 .site-nav .link:hover,
-.site-nav .link:focus,
-.site-nav .link.current {
+.site-nav .link:focus {
   color: var(--accent-color);
-  border-bottom: 4px solid var(--accent-color);
+}
+.site-nav .link.current {
+  position: relative;
+}
+.site-nav .link.current::after {
+  position: absolute;
+  background-color: #2196f3;
   border-radius: 2px;
+  content: "";
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
 }
 .site-nav li {
   margin-right: 50px;
@@ -317,7 +328,16 @@ a {
 .directions {
   padding-bottom: 94px;
 }
+.directions .container {
+  position: relative;
+}
 .directions .title {
+  border-radius: 0px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  width: calc((100% - 45px * 2) / 3);
   margin-top: 0px;
   margin-bottom: 0px;
   padding-top: 27px;
@@ -327,7 +347,6 @@ a {
   font-weight: bold;
   font-size: var(--text-font-size);
   line-height: 16px;
-  text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--light-color);
@@ -503,6 +522,9 @@ a {
   padding-top: 94px;
   padding-bottom: 94px;
 }
+.portfolio-info li {
+  position: relative;
+}
 .portfolio-sorting {
   margin-bottom: 50px;
 }
@@ -559,6 +581,7 @@ a {
 }
 
 .portfolio-info li {
+  position: relative;
   width: calc((100% - 30px * 2) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
@@ -583,7 +606,32 @@ a {
 }
 .portfolio-info .text {
   display: none;
-  font-size: 0;
+  font-size: 0em;
+  margin-top: 0px;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 294px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 110;
+}
+.portfolio-info .text:hover,
+.portfolio-info .text:focus {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 110;
+  padding: 63px 24px;
+  width: 100%;
+  height: 294px;
+  background: rgba(33, 150, 243, 0.9);
   margin-top: 0px;
   margin-bottom: 0px;
   font-family: var(--font-family);
@@ -595,12 +643,7 @@ a {
   letter-spacing: 0.03em;
   color: var(--light-color);
 }
-/*.portfolio-info .text:hover {
-  background: rgba(33, 150, 243, 0.9);
-}*/
 .portfolio-info .title {
-  margin-top: 0px;
-  margin-bottom: 4px;
   padding-left: 24px;
   font-family: var(--font-family);
   font-style: normal;
@@ -612,8 +655,6 @@ a {
   color: var(--title-color);
 }
 .portfolio-info .category {
-  margin-top: 0px;
-  margin-bottom: 0px;
   padding-left: 24px;
   font-family: var(--font-family);
   font-style: normal;

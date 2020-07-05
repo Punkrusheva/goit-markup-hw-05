@@ -617,48 +617,43 @@ a {
   font-size: 0;
 }
 .portfolio-overlay {
+  position: relative;
+  overflow: hidden;
+}
+/*.portfolio-item:hover .portfolio-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}*/
+.portfolio-item .text {
   position: absolute;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 23px;
+  margin: 0px;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+
   background-color: rgba(33, 150, 243, 0.9);
-
-  transform: translateY(100%);
-  opacity: 0;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.portfolio-item:hover .portfolio-overlay {
-  transform: translateY(0);
-  opacity: 1;
-}
-.portfolio-actions {
-  position: absolute;
-  display: flex;
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-  opacity: 0;
-}
-.portfolio-item:hover .portfolio-actions {
-  opacity: 1;
-}
-
-.portfolio-item .text {
-  width: 370px;
-  height: 294px;
-  color: rgb(255, 255, 255);
-  padding: 63px 24px;
+  color: var(--light-color);
   font-family: var(--font-family);
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0.03em;
-}
 
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-item:hover .text {
+  transform: translateY(0);
+  opacity: 1;
+}
 .portfolio-info .portfolio-meta {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -673,7 +668,6 @@ a {
   font-weight: bold;
   font-size: 18px;
   line-height: var(--title-font-size);
-
   letter-spacing: 0.06em;
   color: var(--title-color);
 }
@@ -686,77 +680,7 @@ a {
   letter-spacing: 0.03em;
   color: var(--text-color);
 }
-/*
-.product {
-  width: 370px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 1px 3px rgba(0, 0, 0, 0.12);
-}
 
-.product-info:hover .text {
-  opacity: 1;
-}
-
-.product-info {
-  position: relative;
-  overflow: hidden;
-}
-
-.product-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--accent-color);
-
-  transform: translateY(100%);
-  opacity: 0;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.product:hover .product-overlay {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.product-meta {
-  padding: 15px;
-}
-
-.product-name {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.product-price {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.product-actions {
-  position: absolute;
-  display: flex;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  opacity: 0;
-}
-
-.product:hover .product-actions {
-  opacity: 1;
-}
-
-.product-actions .text {
-  width: 100%;
-  height: 100%;
-  color: rgb(255, 255, 255);
-}
-*/
 /* FOOTER */
 .footer {
   background-color: var(--footer-bg-color);
